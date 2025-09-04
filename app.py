@@ -6,8 +6,11 @@ from werkzeug.utils import secure_filename
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, origins=["https://tayyebsoubra.github.io"])  # allow your GitHub Pages site
+
 
 # ---------------- GOOGLE DRIVE SETUP ----------------
 # Load service account credentials
